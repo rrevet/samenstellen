@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>SIP-request, NTD-request of partner-mail samenstellen</title>
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1>SIP-request, NTD-request of partner-mail samenstellen</h1>
+	<p>Via deze omgeving kun je een SIP-request, NTD-request of partner-mail samenstellen. Begin met samenstellen of druk op Help voor uitleg.</p>
+	<fieldset style="border: 1px solid lightgray; padding: 20px;">
+		<legend class="legend-head">Invoer</legend>
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend>Domeinnaam</legend> https://www.
+			<input type="text" placeholder="bol.com" id="myInput" oninput="InputName()"> </fieldset>
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend>Opties</legend>
+			<form style="padding-bottom: 5px;">
+				<input type="checkbox" id="myCheck100" onclick="toggle(this);">
+				<label for="myCheck100">Selecteer/deselecteer alles</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck16" onclick="myFunction16()">
+				<label for="myCheck16">Er is aangiften gedaan met het verzoek tot strafvervolging</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck1" onclick="myFunction1()">
+				<label for="myCheck1">De website heeft geen Kamer van Koophandel-nummer *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck2" onclick="myFunction2()">
+				<label for="myCheck2">De website heeft geen btw-identificatienummer *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck3" onclick="myFunction3()">
+				<label for="myCheck3">De website heeft geen geldige adresgegevens *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck13" onclick="myFunction13()">
+				<label for="myCheck13">De website misbruikt een Kamer van Koophandel-nummer</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck14" onclick="myFunction14()">
+				<label for="myCheck14">De website misbruikt een btw-identificatienummer</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck17" onclick="myFunction17()">
+				<label for="myCheck17">De website misbruikt een webwinkelkeurmerk</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck15" onclick="myFunction15()">
+				<label for="myCheck15">De website misbruikt geldige adresgegevens</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck4" onclick="myFunction4()">
+				<label for="myCheck4">De website int betalingen, maar levert geen producten *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck5" onclick="myFunction5()">
+				<label for="myCheck5">De website verkoopt producten die onder de marktwaarde zijn geprijsd *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck9" onclick="myFunction9()">
+				<label for="myCheck9">De website biedt alleen betalen per handmatige bankoverschrijving</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck11" onclick="myFunction11()">
+				<label for="myCheck11">De website biedt alleen betalen per crypto valuta</label>
+			</form>
+			<form>
+			<form>
+				<input type="checkbox" id="myCheck10" onclick="myFunction10()">
+				<label for="myCheck10">De website gebruikte meerdere talen door elkaar *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck12" onclick="myFunction12()">
+				<label for="myCheck12">De website is te linken aan andere malafide websites</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck8" onclick="myFunction8()">
+				<label for="myCheck8">De domeinnaam is zeer recent geregistreerd *</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck6" onclick="myFunction6()">
+				<label for="myCheck6">De whois-gegevens van de domeinnaam worden misbruikt</label>
+			</form>
+			<form>
+				<input type="checkbox" id="myCheck7" onclick="myFunction7()">
+				<label for="myCheck7">De klantenservice reageert niet op verzoeken van klanten *</label>
+			</form>
+		</fieldset>
+	</fieldset>
+	<br>
+	<div class="tab">
+		<button class="tablinks" onclick="openCity(event, 'Hamburg')">Bekijk SIP-request</button>
+		<button class="tablinks" onclick="openCity(event, 'London')">Bekijk NTD-request</button>
+		<button class="tablinks" onclick="openCity(event, 'Paris')">Bekijk partner-mail</button>
+		<button class="tablinks" onclick="javascript:window.location.href=window.location.href">Herstel waarden</button>
+		<button class="tablinks" onclick="openCity(event, 'Amsterdam')">Help</button>
+	</div>
+	<div id="Hamburg" class="tabcontent">
+		<br>
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend class="legend-head">Uitvoer</legend>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Onderwerp</legend>
+				<div id="sample1">The source IP address of the hosting provider</div>
+			</fieldset>
+			<br>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Inhoud</legend>
+				<div id="sample2"> Dear Sir/Madam,
+					<br>
+					<br>
+					The Dutch National Police are conducting an investigation of <span id="demo">[VOER DOMEINNAAM IN]</span>. Can you please provide us the source IP address of the hosting provider?
+					<br>
+					<br>Regards,
+					<br>
+					<br> National Reporting Center Internetfraud </div>
+			</fieldset>
+		</fieldset>
+		<br>
+		<button onclick="document.location = 'mailto:abuse+law@cloudflare.com?body=%20'">Nieuwe e-mail</button>
+		<button class="tablinks" onclick="CopyToClipboard1('sample1');return false;">Kopieer onderwerp</button>
+		<button class="tablinks" onclick="CopyToClipboard2('sample2');return false;">Kopieer inhoud</button>
+	</div>	
+	<div id="London" class="tabcontent">
+		<br>
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend class="legend-head">Uitvoer</legend>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Onderwerp</legend>
+				<div id="sample3"> Notice and Takedown request <span id="demo4">[VOER DOMEINNAAM IN]</span> </div>
+			</fieldset>
+			<br>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Inhoud</legend>
+				<div id="sample4"> Dear Sir/Madam,
+					<br>
+					<br> We’ve received several complaints regarding the website <span id="demo7">[VOER DOMEINNAAM IN]</span>.
+					<br>
+					<br> We have reason to believe that this website is being used for fraudulent activities. Pending further investigation into this internet fraud we would like to request suspension of the hosting provided for the domain <span id="demo3">[VOER DOMEINNAAM IN]</span>.
+					<br>
+					<br> This was revealed by:
+					<ul>
+						<li id="text1.16" style="display:none">Reports have been made to the police requesting criminal prosecution</li>
+						<li id="text1.1" style="display:none">The website doesn’t have a Dutch Chamber of Commerce number</li>
+						<li id="text1.2" style="display:none">The website doesn’t have a Dutch VAT identification number</li>
+						<li id="text1.3" style="display:none">The website doesn’t have valid address data</li>
+						<li id="text1.13" style="display:none">The website abuses a Dutch Chamber of Commerce number</li>
+						<li id="text1.14" style="display:none">The website abuses a Dutch VAT identification number</li>
+						<li id="text1.17" style="display:none">The website abuses a web store certification</li>
+						<li id="text1.15" style="display:none">The website abuses address data</li>
+						<li id="text1.4" style="display:none">The website collects payments, but does not deliver products</li>
+						<li id="text1.5" style="display:none">The website sells products which are priced below market value</li>
+						<li id="text1.9" style="display:none">The website only offers payment by manual bank transfer</li>
+						<li id="text1.11" style="display:none">The website only offers pay by crypto currency</li>
+						<li id="text1.10" style="display:none">The website used multiple languages mixed together</li>
+						<li id="text1.12" style="display:none">The website is linkable to other malicious websites</li>
+						<li id="text1.8" style="display:none">The domain name is registered very recently</li>
+						<li id="text1.6" style="display:none">The whois data of the domain name is abused</li>
+						<li id="text1.7" style="display:none">Customer service does not respond to customer requests</li>
+					</ul> We would like to refer to the ‘Notice and Takedown’ code as agreed between internet service- and hosting providers.
+					<br>
+					<br> We already put the website <span id="demo2">[VOER DOMEINNAAM IN]</span> on the list of fraudulent websites on the official website www.politie.nl.
+					<br>
+					<br> This message has been sent under the authority of the Dutch police and the public prosecutor of the Noord-Holland district prosecutor's office.
+					<br>
+					<br> Regards,
+					<br>
+					<br> National Reporting Center Internetfraud </div>
+			</fieldset>
+		</fieldset>
+		<br>
+		<button onclick="document.location = 'mailto:?body=%20'">Nieuwe e-mail</button>
+		<button class="tablinks" onclick="CopyToClipboard3('sample3');return false;">Kopieer onderwerp</button>
+		<button class="tablinks" onclick="CopyToClipboard4('sample4');return false;">Kopieer inhoud</button>
+	</div>
+	<br>
+	<div id="Paris" class="tabcontent">
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend class="legend-head">Uitvoer</legend>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Onderwerp</legend>
+				<div id="sample5"> Zekerheid grenzende waarschijnlijkheid malafide website <span id="demo5">[VOER DOMEINNAAM IN]</span> </div>
+			</fieldset>
+			<br>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Inhoud</legend>
+				<div id="sample6"> Beste,
+					<br>
+					<br> Het LMIO heeft meldingen ontvangen over de website:
+					<br>
+					<br> <span id="demo6">[VOER DOMEINNAAM IN]</span>
+					<br>
+					<br> Uit controle van de website is gebleken dat we met een aan zekerheid grenzende waarschijnlijkheid kunnen spreken over een malafide website.
+					<br>
+					<br> Dat is gebleken uit:
+					<ul>
+						<li id="text2.16" style="display:none">Er zijn aangiften gedaan bij de politie met het verzoek tot strafrechtelijke vervolging</li>
+						<li id="text2.1" style="display:none">De website toont geen KvK-nummer, wat wel wettelijk verplicht is</li>
+						<li id="text2.2" style="display:none">De website vermeldt geen btw-identificatienummer, wat wel geadviseerd wordt door ACM</li>
+						<li id="text2.3" style="display:none">De website heeft geen geldig bezoekadres, vestigingsadres of postadres</li>
+						<li id="text2.13" style="display:none">De website misbruikt een KvK-nummer</li>
+						<li id="text2.14" style="display:none">De website misbruikt een btw-identificatienummer</li>
+						<li id="text2.17" style="display:none">De website misbruikt een webwinkelkeurmerk</li>
+						<li id="text2.15" style="display:none">De website misbruikt een bezoekadres, vestigingsadres of postadres</li>
+						<li id="text2.4" style="display:none">Uit aangiftes komt naar voren dat klanten producten na betaling niet geleverd krijgen</li>
+						<li id="text2.5" style="display:none">De website verkoopt producten die onder de marktwaarde zijn geprijsd, te mooi om waar te zijn</li>
+						<li id="text2.9" style="display:none">De website biedt alleen betalen per handmatige bankoverschrijving, dit is erg ongebruikelijk</li>
+						<li id="text2.11" style="display:none">De website biedt alleen betalen per crypto valuta, dit is erg ongebruikelijk</li>
+						<li id="text2.10" style="display:none">De website gebruikte meerdere talen door elkaar, terwijl de doelgroep Nederland is</li>
+						<li id="text2.12" style="display:none">De website is te linken aan andere malafide websites</li>
+						<li id="text2.8" style="display:none">De website is zeer recent geregistreerd, maar suggereert aan klanten al langer te bestaan</li>
+						<li id="text2.6" style="display:none">De whois-gegevens van de domeinnaam worden misbruikt</li>
+						<li id="text2.7" style="display:none">De klantenservice reageert niet op vragen of opmerkingen vanuit klanten</li>
+					</ul> De website staat inmiddels vermeld in de lijst met malafide handelspartijen op de website www.politie.nl.
+					<br>
+					<br> Daarnaast is er een verzoek verzonden naar de host om passende maatregelen te nemen tegen de website.
+					<br>
+					<br> Met vriendelijke groet,
+					<br>
+					<br> Politie | Noord-Holland | Landelijk Meldpunt Internet Oplichting
+					<br> Postadres: postbus 57, 2000 AB Haarlem
+					<br> 0900-8844
+					<br>
+					<br> Meer informatie? Kijk op politie.nl </div>
+			</fieldset>
+		</fieldset>
+		<br>
+		<button onclick="document.location = 'mailto:?body=%20'">Nieuwe e-mail</button>
+		<button class="tablinks" onclick="CopyToClipboard5('sample5');return false;">Kopieer onderwerp</button>
+		<button class="tablinks" onclick="CopyToClipboard6('sample6');return false;">Kopieer inhoud</button>
+	</div>
+	<div id="Amsterdam" class="tabcontent">
+		<fieldset style="border: 1px solid lightgray; padding: 20px;">
+			<legend class="legend-head">Help</legend>
+			<fieldset style="border: 1px solid lightgray;">
+				<legend>Uitleg</legend>
+				<ol>
+					<li>Vul een domeinnaam in, zonder https://www.</li>
+					<li>Kies uit Opties hetgeen wat van toepassing is</li>
+					<li>Druk op Bekijk SIP-request, Bekijk NTD-request of Bekijk partner-mail</li>
+					<li>Druk op Nieuwe e-mail om een lege e-mail te openen</li>
+					<li>Druk op Kopieer onderwerp en/of Kopieer inhoud</li>
+					<li>Plak de gekopieerde tekst in de lege e-mail</li>
+					<li>Druk op Herstel waarden om opnieuw te beginnen</li>					
+				</ol>
+			</fieldset>
+		</fieldset>
+	</div>
+</body>
+
+</html>

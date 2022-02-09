@@ -1,0 +1,18 @@
+html {
+    font-family: arial;
+    font-size: 13px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.legend-head {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tabcontent {
+    display: none;
+}
